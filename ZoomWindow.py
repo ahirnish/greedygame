@@ -209,7 +209,7 @@ def weightedMedianInterpolation( imagePath, centreX, centreY, greyScale, factor 
 def crop( width, height, factor, centreX, centreY, greyScale, zoomImage ):
     final_img = create_image( width, height, greyScale )
     finalPixelMap = final_img.load()
-    offsetX, offsetY = centreX-(width/2), (centreY-height/2)
+    offsetX, offsetY = (int(factor*centreX))-(width/2), int((factor*centreY))-(height/2)
     zoomPixelMap = zoomImage.load()
 
     for i in range( width ):
